@@ -1,7 +1,6 @@
 pandas
 dash
 plotly
-psycopg2
-json 
+psycopg2 
 dash_core_components
 dash_html_components
