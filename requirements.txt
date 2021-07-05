@@ -1,0 +1,7 @@
+pandas
+dash
+plotly
+psycopg2
+json 
+dash_core_components
+dash_html_components
