@@ -8,10 +8,12 @@ import pandas as pd
 import plotly.express as px
 from views.header import header 
 from dash.dependencies import Input, Output
+from data.fetcher import fetcher 
+
+
 app = dash.Dash(__name__)
 
-@app.callback(Output('page-content', 'children'),
-              [Input('url', 'pathname')])
+@app.callback(Output('page-content', 'children'),[Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/map':
         return html.Div(children= "1")
@@ -21,10 +23,10 @@ def display_page(pathname):
         return html.Div(children= "3")
 
 
-
 if __name__ == '__main__':
    
     app.layout = html.Div([dcc.Location(id='url', refresh=False) ,header , html.Div(id='page-content', children=[]) , header])
+    a = fetcher()
     
     app.run_server(debug=True)
   
