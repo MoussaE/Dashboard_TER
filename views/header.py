@@ -11,7 +11,7 @@ import plotly.express as px
 
 
 header = html.Div([
-    html.H2(
+    html.Header(
         children='header',
         className= "header"
     ),
