@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
 from views.header import header 
+from views.index import index
 from dash.dependencies import Input, Output
 from data.fetcher import fetcher 
 from views.affichage import * 
@@ -20,8 +21,8 @@ def display_page(pathname):
         return html.Div([corps_map])
     elif pathname == '/plot':
         return html.Div([corps_plot])
-    else: 
-        return html.Div(children= "3")
+    else:
+        return index
 
 
 
@@ -42,7 +43,5 @@ def update_figure(selected_table , selected_country):
 
 
 if __name__ == '__main__':
-   
-    app.layout = html.Div([dcc.Location(id='url', refresh=True), html.Div(id='page-content', children=[])])
+    app.layout = html.Div([dcc.Location(id='url', refresh=False) ,header , html.Div(id='page-content', children=[]) , header])    
     app.run_server(debug=True)
-  
