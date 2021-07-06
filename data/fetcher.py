@@ -20,9 +20,8 @@ class fetcher:
     def get_data(self , query , world = False):
         self.cur.execute (query)
         df = self.cur.fetchall()
-        
         if  not world : 
-            df = pd.DataFrame(df ,columns=["CountryName" , "Value" , "Year"])
+            df = pd.DataFrame(df ,columns=["CountryName" ,  "Year" , "Value"])
         else :
-            df  = pd.DataFrame(df ,columns=["CountryName" , "iso" , "value"])
+            df  = pd.DataFrame(df ,columns=["CountryName" , "iso" , "Value"])
         return df 
