@@ -133,3 +133,21 @@ div.dash-graph {
 	display: inline-block;
   }
   
+#title-metadata {
+	scale: 60%;
+	text-align: center;
+}
+
+#metadata {
+	scale: 90%;
+}
+
+#visualisation {
+	scale: 60%;
+	text-align: center;
+}
+
+h1 {
+	scale: 60%;
+	text-align: center;
+}
