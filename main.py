@@ -45,5 +45,5 @@ def update_figure(selected_table , selected_country):
 
 
 if __name__ == '__main__':
-    app.layout = html.Div([dcc.Location(id='url', refresh=False) ,header , html.Div(id='page-content', children=[]) , header])    
+    app.layout = html.Div([dcc.Location(id='url', refresh=False), html.Div(id='page-content', children=[]) , footer])    
     app.run_server(debug=True)

@@ -12,6 +12,7 @@ import plotly.express as px
 from data.Connector import Connector 
 from data.draw import draw 
 from dash.dependencies import Input, Output
+from views.header import header 
 
 dessinateur = draw()
 nom_table = "population par pays"
@@ -19,16 +20,19 @@ figure_plot= dessinateur.draw_func ( nom_table , False   , "France" , year = 201
 figure_map = dessinateur.draw_func ( nom_table , True   , "France" , year = 2010) 
  
 marks = { x  : str (x) for  x in range (1990 , 2021)}
+
+
 #monde 
 corps_map = html.Div([
-
+    header,
     dcc.Graph(id='graph_map',figure=figure_map,),
     dcc.Dropdown( 
                             options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories ],
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
-                            id = "drop_tables_map"
+                            id = "drop_tables_map",
+                            className="schema_chart"
             
                       ),
          
@@ -50,7 +54,7 @@ corps_plot= html.Div([
     html.Div(
         [ 
 
-                        
+        header,
         dcc.Dropdown( 
                             options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories ],
                             multi=False,

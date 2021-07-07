@@ -26,9 +26,15 @@ header = html.Div(
                                                     html.Div(
                                                         className='logo_uvsq',
                                                         children=[
-                                                            html.Img(
-                                                                src="/assets/icon/logo-UVSQ-color.svg",
-                                                                alt="Logo de l'université de Versailles"
+                                                            html.A (
+                                                                children=[
+                                                                    html.Img(
+                                                                        src="/assets/icon/uvsq_ufr.svg",
+                                                                        alt="Logo de l'université de Versailles"
+                                                                    )
+                                                                ],
+                                                                className="logo_lien",
+                                                                href="https://www.uvsq.fr/"
                                                             )
                                                         ]
                                                     ),
@@ -49,7 +55,7 @@ header = html.Div(
                                                                                     )
                                                                                 ],
                                                                                 id="Accueil",
-                                                                                href="#")
+                                                                                href="/")
                                                                         ]),
                                                                     html.Li(
                                                                         className="header menu nav-ul nav-ul--li",
@@ -62,7 +68,7 @@ header = html.Div(
                                                                                     )
                                                                                 ],
                                                                                 id="Graphique",
-                                                                                href="#")
+                                                                                href="/map")
                                                                         ]),
                                                                     html.Li(
                                                                         className="header menu nav-ul nav-ul--li",
