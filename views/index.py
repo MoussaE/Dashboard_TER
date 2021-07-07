@@ -28,11 +28,12 @@ index = html.Div(
                         html.H1(
                             "Base de donnée sur le piratage de logiciels", className="display-3"),
                         html.P(
-                            "",
+                            "L’objectif du projet consistera à observer et formuler des hypothèses explicatives de l’évolution du cybercrime. Nous nous focaliserons sur une forme particulière de cette criminalité : le piratage de logiciels. Le cybercrime est une catégorie de crime assez large, dont les formes ou modalités particulières sont nombreuses. Nous englobons dans cette catégorie les actes criminels en ligne et hors ligne, dès lors qu’ils mobilisent des moyens informatiques. Le « piratage de logiciel » est l’un des formes de la criminalité informatique. En termes juridiques elle est qualifiée de « contrefaçon » (toute forme d’atteinte à la propriété intellectuelle des logiciels, ie. copie sans autorisation, modifications illicites du code, utilisation sans licence, distribution non autorisée...)."
+                            "Cette base de donnée contient toutes les informations regroupés dans le cadre de l'étude sur l'évolution du cyber-crime",
                             className="lead",
                         ),
                         html.P(
-                            "You will need to embed a fluid container in ",
+                            "Une description des tables, ainsi que plusieurs moyens de visualisation son mis à disposition de l'utilisateur",
                             className="lead",
                         ),
                     ],
@@ -66,7 +67,7 @@ index = html.Div(
                                     "Visualisation des données cartographiques",
                                     className="card-text",
                                 ),
-                                dbc.Button("Visualiser", color="primary"),
+                                dbc.Button("Visualiser", color="primary",href="/map"),
                             ]
                         ),
                     ],
@@ -82,7 +83,7 @@ index = html.Div(
                                     "Visualisation des données sous formes de graphiques",
                                     className="card-text",
                                 ),
-                                dbc.Button("Visualiser", color="primary"),
+                                dbc.Button("Visualiser", color="primary", href="/plot"),
                             ]
                         ),
                     ],
@@ -98,7 +99,7 @@ index = html.Div(
                                     "Comparaisons entre differentes valeurs",
                                     className="card-text",
                                 ),
-                                dbc.Button("Visualiser", color="primary"),
+                                dbc.Button("Visualiser", color="primary",href="/compar"),
                             ]
                         ),
                     ],
