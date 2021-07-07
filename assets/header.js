@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", Object(setTimeout(function () {
     var compare = document.getElementById("Compare");
     var github = document.getElementById("Github");
 
-
-    alert(document.location.href);
     console.log(accueil, graphique, jupyter); 
 
     accueil.addEventListener("mouseover", function(event) {

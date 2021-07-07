@@ -9,6 +9,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 from data.fetcher import fetcher
+from views.header import header
 
 f = fetcher()
 
@@ -21,10 +22,12 @@ df = pd.read_sql("select  t.table_name as Table,d.description, c.reltuples as Tu
 
 index = html.Div(
     [
+        header,
         dbc.Row(dbc.Col(
             dbc.Jumbotron([
                 dbc.Container(
                     [
+                        
                         html.H1(
                             "Base de donnée sur le piratage de logiciels", className="display-3"),
                         html.P(
