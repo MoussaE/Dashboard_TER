@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
 from views.header import header 
+from views.footer import footer
 from dash.dependencies import Input, Output
 from data.fetcher import fetcher 
 
@@ -25,7 +26,7 @@ def display_page(pathname):
 
 if __name__ == '__main__':
    
-    app.layout = html.Div([dcc.Location(id='url', refresh=False) ,header , html.Div(id='page-content', children=[]) , header])
+    app.layout = html.Div([dcc.Location(id='url', refresh=False) , header , html.Div(id='page-content', children=[]) , footer])
     a = fetcher()
     
     app.run_server(debug=True)

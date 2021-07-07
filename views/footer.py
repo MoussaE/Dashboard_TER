@@ -6,3 +6,5 @@ import json
 import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
+
+footer=html.Div(children=[])
