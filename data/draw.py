@@ -41,5 +41,20 @@ class  draw:
             return fig 
 
 
+    def draw_compare(self , country_name , tb_1 , tb_2 ):
+        fig = go.Figure()
+     
+        self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries", self.recup.cnt.conn )
+        self.categories_pays = self.query["country"].keys()
+
+        requete  = self.query["country"][tb_1] + "\'"+ str (country_name) + "\';"
+        df  = self.recup.get_data (requete)
+        
+        requete1  = self.query["country"][tb_2] + "\'"+ str (country_name) + "\';"
+        df2  = self.recup.get_data (requete1)
+        
+        fig.add_trace(go.Scatter(x=df2["Year"], y=df2["Value"], mode='markers',name= tb_2))
+        fig.add_trace(go.Scatter(x=df["Year"], y=df["Value"], mode='markers',name= tb_1))
 
 
+        return fig

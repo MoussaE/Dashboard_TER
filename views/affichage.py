@@ -18,6 +18,7 @@ dessinateur = draw()
 nom_table = "population par pays"
 figure_plot= dessinateur.draw_func ( nom_table , False   , "France" , year = 2010) 
 figure_map = dessinateur.draw_func ( nom_table , True   , "France" , year = 2010) 
+figure_compare = dessinateur.draw_compare("Argentina" , nom_table , nom_table )
  
 marks = { x  : str (x) for  x in range (1990 , 2021)}
 
@@ -83,3 +84,48 @@ corps_plot= html.Div([
 
 
 
+corps_compare= html.Div([
+
+    dcc.Graph(id='graph_compare',figure=figure_compare,),
+    html.Div(
+        [ 
+
+        header,
+       
+         html.Br(children=[]), 
+         dcc.Dropdown( 
+                            options=[ {'label': value ["nicename"]  ,'value': value["nicename"] } for  key , value  in dessinateur.countries.iterrows() ],
+                            multi=False,
+                            value= dessinateur.countries["nicename"][0],
+                            placeholder= "Nom pays",
+                            id = "drop_countries_compare"
+            
+                      ),
+       
+            html.Br(children=[]),
+
+         dcc.Dropdown( 
+                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
+                            multi=False,
+                            value= nom_table ,
+                            id = "drop_tables_compare"
+            
+                      ),
+         
+         html.Br(children=[]),  
+
+          dcc.Dropdown( 
+                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
+                            multi=False,
+                            value= nom_table ,
+                            id = "drop_tables2_compare"
+            
+                      ),
+         
+         html.Br(children=[]), 
+
+            html.Br(children=[]), 
+    
+        ],style={'text-align': 
+        'center'}),
+])
