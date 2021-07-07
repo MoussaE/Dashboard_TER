@@ -1,82 +1,57 @@
 { 
 	"world":{
-	"Cyber crimes" : "select c.nicename , c.iso ,  cc.score from c_crime cc , countries c where cc.country_id = c.id;" ,
+	"cyber crimes" : "select c.nicename , c.iso ,  cc.score from c_crime cc , countries c where cc.country_id = c.id;" ,
 	"serveurs" : "select c.nicename , c.iso ,  cc.servsperhab from servers cc , countries c where cc.country_id = c.id and year =   " , 
-	"Alphabétisation 15": "select c.nicename , c.iso ,  cc.literacy_15 from literacy_rate cc , countries c where cc.country_id = c.id and year =  ",
-	"Alphabétisation 25-64" :  "select c.nicename , c.iso ,  cc.literacy_25_64 from literacy_rate cc , countries c where cc.country_id = c.id and year =  " , 
-	"Alphabétisation 64 et plus": "select c.nicename , c.iso ,  cc.literacy_65 from literacy_rate cc , countries c where cc.country_id = c.id and year =  ",
+	"Alphabetisation 15": "select c.nicename , c.iso ,  cc.literacy_15 from literacy_rate cc , countries c where cc.country_id = c.id and year =  ",
+	"Alphabetisation 25-64" :  "select c.nicename , c.iso ,  cc.literacy_25_64 from literacy_rate cc , countries c where cc.country_id = c.id and year =  " , 
+	"Alphabetisation 64 et plus": "select c.nicename , c.iso ,  cc.literacy_65 from literacy_rate cc , countries c where cc.country_id = c.id and year =  ",
     "homicides":"select c.nicename , c.iso ,  cc.rate from homicides cc , countries c where cc.country_id = c.id and year =   " ,
     "migration":"select c.nicename , c.iso ,  cc.value from migration cc , countries c where cc.country_id = c.id and year =   " ,
-    "Score régime politique" : "select c.nicename , c.iso ,  cc.score_regime from type_political_regime cc , countries c where cc.country_id = c.id and year = ",
-    "ict_imports" : "select countries.nicename  ,iso , percent  from  ict_imports , countries  where   country_id = countries.id   and year = ",
-	"ict_exports" : "select countries.nicename  , iso, percent   from ict_exports  , countries  where   country_id = countries.id and year = ",
-	"utilisateur internet" : "select countries.nicename  , iso , usagescore  from netusers  , countries  where   country_id = countries.id  and year =  ",
+    "Score regime politique" : "select c.nicename , c.iso ,  cc.score_regime from type_political_regime cc , countries c where cc.country_id = c.id and year = ",
+    "nombre d'importation en materiel techno" : "select countries.nicename  ,iso , percent  from  ict_imports , countries  where   country_id = countries.id   and year = ",
+	"nombre d'exporattion en materiel techno" : "select countries.nicename  , iso, percent   from ict_exports  , countries  where   country_id = countries.id and year = ",
+	"utilisateurs internet" : "select countries.nicename  , iso , usagescore  from netusers  , countries  where   country_id = countries.id  and year =  ",
 	"population par pays" : "select countries.nicename  , iso , population  from population  , countries  where   country_id = countries.id  and year =  ", 
-	"bsa" : "select countries.nicename  , iso , value from bsa  , countries  where   country_id = countries.id  and year =  ",
-	"gmi" : "select countries.nicename  ,  iso , score from  gmi  , countries  where   country_id = countries.id and year = ",
-	"piba" : "select countries.nicename  , iso  , pibphab  from  piba , countries  where   country_id = countries.id  and year = "
+	"score de piratage" : "select countries.nicename  , iso , value from bsa  , countries  where   country_id = countries.id  and year =  ",
+	"donnees militaire" : "select countries.nicename  ,  iso , score from  gmi  , countries  where   country_id = countries.id and year = ",
+	"produit interieure brut par habitant" : "select countries.nicename  , iso  , pibphab  from  piba , countries  where   country_id = countries.id  and year = "
     }, 
 
     "country":{
-    "Alphabétisation 15": "select countries.nicename  , year , literacy_15  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename= ",
-    "titre Alphabétisation 15":"pourcentage %  d'alphabétisation des 15-25 ans :",
-	
-	"Alphabétisation 25-64" :  "select countries.nicename  , year , literacy_25_64  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =" ,
-	"titre Alphabétisation 25-64":"pourcentage %  d'alphabétisation des 25-64 ans :", 
-	
-	"Alphabétisation 64 et plus": "select countries.nicename  , year , literacy_65  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =",
-	"titre Alphabétisation 64 et plus":"pourcentage %  d'alphabétisation des  plus de 64 ans :",
-	
+    "Alphabetisation 15": "select countries.nicename  , year , literacy_15  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename= ",
+	"Alphabetisation 25-64" :  "select countries.nicename  , year , literacy_25_64  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =" ,
+	"Alphabetisation 64 et plus": "select countries.nicename  , year , literacy_65  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =",
 	"homicides" : "select countries.nicename  , year , count   from homicides , countries  where   country_id = countries.id  and nicename =",
-	"titre homicides":" le nombre d'homicides par année",
-
 	"migration" : "select countries.nicename  , year , value   from migration , countries  where   country_id = countries.id  and nicename =",
-	"titre migration":" le nombre de migrants par année",
-
-	"servers" : "select countries.nicename  , year , servsperhab   from servers , countries  where   country_id = countries.id  and nicename =",
-	"titre serveurs" : "Nombre de serveurs par habitants",
-
-	"Score régime politique" : "select countries.nicename  , year , score_regime  from type_political_regime  , countries  where   country_id = countries.id  and nicename =",
-	"titre Score régime politique" : "score du regime politique :",
-
-	"ict_imports" : "select countries.nicename  , year , percent  from  ict_imports , countries  where   country_id = countries.id  and nicename =",
-	"titre ict_imports" : "",
-
-	"ict_exports" : "select countries.nicename  , year , percent   from ict_exports  , countries  where   country_id = countries.id  and nicename =",
-	"titre ict_exports" : "",
-
-	"net users" : "select countries.nicename  , year , usagescore  from netusers  , countries  where   country_id = countries.id  and nicename =",
-	"titre net users" : "pourcentage % des utilisateurs d'internet:",
-
+	"serveurs" : "select countries.nicename  , year , servsperhab   from servers , countries  where   country_id = countries.id  and nicename =",
+	"score regime politique" : "select countries.nicename  , year , score_regime  from type_political_regime  , countries  where   country_id = countries.id  and nicename =",
+	"nombre d'importation en materiel techno" : "select countries.nicename  , year , percent  from  ict_imports , countries  where   country_id = countries.id  and nicename =",
+	"nombre d'exporattion en materiel techno" : "select countries.nicename  , year , percent   from ict_exports  , countries  where   country_id = countries.id  and nicename =",
+	"utilisateurs internet" : "select countries.nicename  , year , usagescore  from netusers  , countries  where   country_id = countries.id  and nicename =",
 	"population par pays" : "select countries.nicename  , year , population  from population  , countries  where   country_id = countries.id  and nicename =", 
-	"titre population par pays" : "nombre d'habitants par année",
-
-	"bsa" : "select countries.nicename  , year , value from bsa  , countries  where   country_id = countries.id  and nicename =",
-	"titre bsa" : "",
-
-	"gmi" : "select countries.nicename  , year , score from  gmi  , countries  where   country_id = countries.id  and nicename =",
-	"titre gmi" : "",
-
-	"piba" : "select countries.nicename  , year , pibphab  from  piba , countries  where   country_id = countries.id  and nicename =",
-	"titre piba" : "valeur du produit intérieur brut par habitant"
-    }
+	"score de piratage" : "select countries.nicename  , year , value from bsa  , countries  where   country_id = countries.id  and nicename =",
+	"donnees militaire" : "select countries.nicename  , year , score from  gmi  , countries  where   country_id = countries.id  and nicename =",
+	"produit interieure brut par habitant" : "select countries.nicename  , year , pibphab  from  piba , countries  where   country_id = countries.id  and nicename ="
+	
+    
+}
 	 , "rename":
 	 {
-		 "Alphabétisation 15": "literacy_rate",
-		 "Alphabétisation 25-64" :  "literacy_rate",
-		 "Alphabétisation 64 et plus": "literacy_rate",
+		 "Alphabetisation 15": "literacy_rate",
+		 "Alphabetisation 25-64" :  "literacy_rate",
+		 "Alphabetisation 64 et plus": "literacy_rate",
 		 "homicides" : "homicides",
 		 "migration" : "migration",
 		 "serveurs" : "servers",
-		 "Score régime politique" : "type_political_regime",
-		 "ict_imports" : "ict_imports",
-		 "ict_exports" : "ict_exports",
-		 "net users" : "netusers",
+		 "Score regime politique" : "type_political_regime",
+		 "nombre d'importation en materiel techno" : "ict_imports",
+		 "nombre d'exporattion en materiel techno" : "ict_exports",
 		 "population par pays" :  "population",
-		 "bsa" : "bsa",
-		 "gmi" : "gmi",
-		 "piba" : "piba", 
-		 "utilisateur internet" : "netusers"
+		 "score de piratage" : "bsa",
+		 "donnees militaire" : "gmi",
+		 "produit interieure brut par habitant" : "piba", 
+		 "utilisateurs internet" : "netusers",
+		 "cyber crimes" : "c_crime"
 	 }
 
    }

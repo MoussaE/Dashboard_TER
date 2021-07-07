@@ -7,9 +7,6 @@ import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
 from views.header import header 
-
-from views.footer import footer
-from views.index import index
 from dash.dependencies import Input, Output
 from data.fetcher import fetcher 
 from views.affichage import * 
@@ -23,14 +20,15 @@ def display_page(pathname):
         return html.Div([corps_map])
     elif pathname == '/plot':
         return html.Div([corps_plot])
-    else:
-        return index
+    elif pathname == "/compare":
+        return html.Div([corps_compare])
+    else: 
+        return html.Div(children= "3")
 
 
 
 @app.callback( Output('graph_map', 'figure'),Input('drop_tables_map', 'value') , Input('year-slider', 'value')  )
 def update_figure(selected_table , selected_year):
-    print(selected_year)
     fig = dessinateur.draw_func ( selected_table ,  True  , year =selected_year) 
     fig.update_layout(transition_duration=500)
     return fig
@@ -38,12 +36,21 @@ def update_figure(selected_table , selected_year):
 
 @app.callback( Output('graph_plot', 'figure'), Input('drop_tables', 'value') , Input('drop_countries', 'value')  )
 def update_figure(selected_table , selected_country):
-    print(selected_country)
+
     fig = dessinateur.draw_func (selected_table ,  False   , selected_country ) 
     fig.update_layout(transition_duration=500)
     return fig
 
 
+@app.callback( Output('graph_compare', 'figure'),Input('drop_countries_compare', 'value') ,Input('drop_tables_compare', 'value'), Input('drop_tables2_compare', 'value')   )
+def update_figure(country , tb1 , tb2):
+    fig = dessinateur.draw_compare (country , tb1 , tb2)
+    fig.update_layout(transition_duration=500)
+    return fig
+
+
 if __name__ == '__main__':
-    app.layout = html.Div([dcc.Location(id='url', refresh=False), html.Div(id='page-content', children=[]) , footer])    
+   
+    app.layout = html.Div([dcc.Location(id='url', refresh=True), html.Div(id='page-content', children=[])])
     app.run_server(debug=True)
+  
