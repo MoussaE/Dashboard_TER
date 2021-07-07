@@ -1,4 +1,66 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
 
+div[class*="Select"] {
+	border: none;
+
+}
+
+div.Select-multi-value-wrapper{
+	border:none;
+	width: 100%;
+}
+
+div.Select-value-label {
+	width: 100%;
+}
+
+div.Select-control {
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+span.Select-clear {
+	color: rgba(105, 4, 59, 1);
+	font-weight: bold;
+}
+
+span.Select-arrow{
+	color: rgba(105, 4, 59, 1);
+	font-weight: bold;
+}
+
+div.Select-value{
+	text-transform: capitalize;
+	font-weight: bold;
+	color: rgba(105, 4, 59, 1);
+	border:none;
+	width: 100%;
+	border: 3px solid rgba(105, 4, 59, 0.5);
+	border-radius: 10px;
+}
+
+div.Select-value:hover {
+	background-color: rgba(122, 38, 85, 0.15);
+	transition: 0.2s;
+}
+
+div.Select-menu-outer {
+	width: 30%;
+	margin: auto;
+}
+
+input#drop_tables_map {
+	border: none;
+}
+
+.Header {
+	z-index: 9999999;
+	position: fixed 0 0;
+	align-self: top;
+}
 
 div.dash-graph {
 	margin-top: 80px;

@@ -23,7 +23,9 @@ marks = { x  : str (x) for  x in range (1990 , 2021)}
 
 
 #monde 
-corps_map = html.Div([
+corps_map = html.Div(
+    className="schema_chart", 
+    children=[
     header,
     dcc.Graph(id='graph_map',figure=figure_map,),
     dcc.Dropdown( 
@@ -31,8 +33,7 @@ corps_map = html.Div([
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
-                            id = "drop_tables_map",
-                            className="schema_chart"
+                            id = "drop_tables_map"
             
                       ),
          
@@ -60,7 +61,7 @@ corps_plot= html.Div([
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
-                            id = "drop_tables"
+                            id = "drop_tables",
             
                       ),
          
