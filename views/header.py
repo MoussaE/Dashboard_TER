@@ -68,6 +68,18 @@ header = html.Div(
                                                                                     )
                                                                                 ],
                                                                                 id="Graphique",
+                                                                                href="/plot")
+                                                                        ]),
+                                                                    html.Li(
+                                                                        className="header menu nav-ul nav-ul--li",
+                                                                        children=[
+                                                                            html.A(
+                                                                                children=[
+                                                                                    html.Img(
+                                                                                        src="/assets/icon/globe.svg",
+                                                                                        alt="logo globe terrestre"                                                                                    )
+                                                                                ],
+                                                                                id="Globe",
                                                                                 href="/map")
                                                                         ]),
                                                                     html.Li(
@@ -82,6 +94,19 @@ header = html.Div(
                                                                                 ],
                                                                                 id="Jupyter-Notebook",
                                                                                 href="#")
+                                                                        ]),
+                                                                    html.Li(
+                                                                        className="header menu nav-ul nav-ul--li",
+                                                                        children=[
+                                                                            html.A(
+                                                                                children=[
+                                                                                    html.Img(
+                                                                                        src="/assets/icon/compare.svg",
+                                                                                        alt="logo comparaison de fichier"
+                                                                                    )
+                                                                                ],
+                                                                                id="Compare",
+                                                                                href="/compare")
                                                                         ])
                                                                 ]
                                                             )

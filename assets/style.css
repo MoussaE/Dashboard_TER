@@ -25,6 +25,7 @@ div.Select-control {
 span.Select-clear {
 	color: rgba(105, 4, 59, 1);
 	font-weight: bold;
+	display: none;
 }
 
 span.Select-arrow{
@@ -35,21 +36,80 @@ span.Select-arrow{
 div.Select-value{
 	text-transform: capitalize;
 	font-weight: bold;
-	color: rgba(105, 4, 59, 1);
+	text-align: center;
 	border:none;
 	width: 100%;
 	border: 3px solid rgba(105, 4, 59, 0.5);
 	border-radius: 10px;
 }
 
+.has-value.Select--single>.Select-control .Select-value .Select-value-label
+{
+	color: #5a0333;
+
+}
+
+.has-value.Select--single>.Select-control .Select-value:hover .Select-value-label
+{
+	color: #fff;
+}
+
 div.Select-value:hover {
-	background-color: rgba(122, 38, 85, 0.15);
-	transition: 0.2s;
+	background-color: rgba(105, 4, 59, 1);
+	transition: 0.1s;
 }
 
 div.Select-menu-outer {
+	width: 100%;
+}
+
+.plot-container .svg-container {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+div#graph_plot {
+	width: 100%;
+}
+
+div.plot-container.plotly {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+svg.main-svg {
+	margin-left: auto;
+	margin-right: auto;
+	size: 100%;
+}
+
+div.Select-menu {
 	width: 30%;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.dropdown-content {
+	border: 5px solid black;
+}
+
+.menu-deroulant .Select--multi .Select-value {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu-deroulant .VirtualizedSelectFocusedOption {
+	background-color: rgba(105, 4, 59, 0.3);
+
+}
+
+.menu-deroulant .VirtualizedSelectOption {
+	text-transform: capitalize;
 }
 
 input#drop_tables_map {

@@ -34,8 +34,8 @@ corps_map = html.Div(
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
-                            id = "drop_tables_map"
-            
+                            id = "drop_tables_map",
+                            className="menu-deroulant"
                       ),
          
          html.Br(children=[]),
@@ -43,26 +43,35 @@ corps_map = html.Div(
     html.Div(
         [ 
             html.Br(children=[]), 
-            html.Div([dcc.Slider( step = 1 ,marks=  marks , min = 1990 , max = 2020 , value = 2010 , included=False, id = "year-slider" )]),
-    
+            dcc.Dropdown(
+                options=[{'label': value, 'value': value}
+                         for value in marks],
+                multi=False,
+                value=2000,
+                placeholder="Données",
+                id="year-slider",
+                className="menu-deroulant"
+
+            )
         ],style={'text-align': 'center'}),
 ])
 
 #pays 
 
-corps_plot= html.Div([
-
-    dcc.Graph(id='graph_plot',figure=figure_plot,),
+corps_plot= html.Div(
+    className="schema_chart",
+    children=[
     html.Div(
         [ 
-
         header,
+        dcc.Graph(id='graph_plot', figure=figure_plot,),
         dcc.Dropdown( 
                             options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories ],
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
-                            id = "drop_tables",
+                            id="drop_tables",
+                            className="menu-deroulant"
             
                       ),
          
@@ -73,7 +82,8 @@ corps_plot= html.Div([
                             multi=False,
                             value= dessinateur.countries["nicename"][0],
                             placeholder= "Nom pays",
-                            id = "drop_countries"
+                            id = "drop_countries",
+                            className="menu-deroulant"
             
                       ),
        
@@ -85,21 +95,25 @@ corps_plot= html.Div([
 
 
 
-corps_compare= html.Div([
+corps_compare= html.Div(
+    className="schema_chart",
+    children=[
 
-    dcc.Graph(id='graph_compare',figure=figure_compare,),
+    
     html.Div(
-        [ 
+        className="schema_chart",
+        children=[ 
 
         header,
-       
-         html.Br(children=[]), 
-         dcc.Dropdown( 
+        dcc.Graph(id='graph_compare', figure=figure_compare,),
+        html.Br(children=[]), 
+        dcc.Dropdown( 
                             options=[ {'label': value ["nicename"]  ,'value': value["nicename"] } for  key , value  in dessinateur.countries.iterrows() ],
                             multi=False,
                             value= dessinateur.countries["nicename"][0],
                             placeholder= "Nom pays",
-                            id = "drop_countries_compare"
+                            id = "drop_countries_compare",
+                            className="menu-deroulant"
             
                       ),
        
@@ -109,7 +123,8 @@ corps_compare= html.Div([
                             options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
                             multi=False,
                             value= nom_table ,
-                            id = "drop_tables_compare"
+                            id = "drop_tables_compare",
+                            className="menu-deroulant"
             
                       ),
          
@@ -119,7 +134,8 @@ corps_compare= html.Div([
                             options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
                             multi=False,
                             value= nom_table ,
-                            id = "drop_tables2_compare"
+                            id = "drop_tables2_compare",
+                            className="menu-deroulant"
             
                       ),
          
