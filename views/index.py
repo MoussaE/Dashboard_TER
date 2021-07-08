@@ -10,6 +10,7 @@ import pandas as pd
 import plotly.express as px
 from data.fetcher import fetcher
 from views.header import header
+from views.footer import footer
 
 f = fetcher()
 
@@ -114,5 +115,6 @@ index = html.Div(
                 ), align="center")
             ]
         ),
+        dbc.Row(dbc.Col(footer))
     ]
 )

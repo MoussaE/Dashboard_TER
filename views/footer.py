@@ -22,7 +22,7 @@ footer = html.Div(children=[
                                         className="footer-h"
                                     ),
                                     html.P(
-                                        
+                                        "blabla"
                                     )
                                 ]
                                 
@@ -35,10 +35,11 @@ footer = html.Div(children=[
                                         className="footer-h"
                                     ),
                                     html.P (
-                                        "Si vous souhaitez nous contacter, vous pouvez nous envoyer un email à ",
                                         children=[
+                                            "Si vous souhaitez nous contacter, vous pouvez nous envoyer un email à ",
                                             html.A(
                                                 "l'adresse suivante",
+
                                                 href="mailto:wissam.serhan@ens.uvsq.fr;moussa.el-habar@ens.uvsq.fr;mohamed.debiane@ens.uvsq.fr"
                                             )
                                         ]
