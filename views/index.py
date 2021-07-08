@@ -31,6 +31,7 @@ index = html.Div(
             dbc.Jumbotron([
                 dbc.Container(
                     [
+                        
                         html.H1(
                             "Base de données sur le piratage de logiciels", className="display-3"),
                         html.P(

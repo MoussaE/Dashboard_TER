@@ -31,7 +31,7 @@ class  draw:
             layout = go.Layout(title="", height=600, width=800)
             df  = self.recup.get_data (requete)
             fig = go.Figure(
-                [go.Bar(x=df["Year"], y=df["Value"],  marker_color="orange")], layout=layout)
+                [go.Bar(x=df["Year"], y=df["Value"],  marker_color="#FF616D")], layout=layout)
             return fig 
         else : 
             datatmp = px.data.gapminder().query("year==2007")
