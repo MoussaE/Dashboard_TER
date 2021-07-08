@@ -58,19 +58,21 @@ header = html.Div(
                                                                                 href="/")
                                                                         ]),
                                                                     html.Li(
+                                                                        id="remove-graphique",
                                                                         className="header menu nav-ul nav-ul--li",
                                                                         children=[
                                                                             html.A(
                                                                                 children=[
                                                                                     html.Img(
                                                                                         src="/assets/icon/chart.svg",
-                                                                                        alt="logo maison"
+                                                                                        alt="logo graphique"
                                                                                     )
                                                                                 ],
                                                                                 id="Graphique",
                                                                                 href="/plot")
                                                                         ]),
                                                                     html.Li(
+                                                                        id="remove-globe",
                                                                         className="header menu nav-ul nav-ul--li",
                                                                         children=[
                                                                             html.A(
@@ -89,7 +91,7 @@ header = html.Div(
                                                                                 children=[
                                                                                     html.Img(
                                                                                         src="/assets/icon/python_fill_purple.svg",
-                                                                                        alt="logo maison"
+                                                                                        alt="logo Python"
                                                                                     )
                                                                                 ],
                                                                                 id="Jupyter-Notebook",

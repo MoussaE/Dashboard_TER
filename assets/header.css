@@ -125,7 +125,7 @@ nav ul li.header.menu.nav-ul--li a {
 }
 
 nav ul li.header.menu.nav-ul--li a:hover {
-    background-color: rgb(105, 4, 59);
+    background-color: rgba(105, 4, 59, 1);
     transition: 0.2s;
 }
 
