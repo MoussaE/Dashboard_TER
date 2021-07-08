@@ -13,6 +13,7 @@ from data.Connector import Connector
 from data.draw import draw 
 from dash.dependencies import Input, Output
 from views.header import header 
+from views.footer import footer
 
 dessinateur = draw()
 nom_table = "population par pays"
@@ -54,6 +55,7 @@ corps_map = html.Div(
 
             )
         ],style={'text-align': 'center'}),
+        footer
 ])
 
 #pays 
@@ -91,6 +93,7 @@ corps_plot= html.Div(
             html.Br(children=[]), 
     
         ],style={'text-align': 'center'}),
+        footer
 ])
 
 
@@ -145,4 +148,5 @@ corps_compare= html.Div(
     
         ],style={'text-align': 
         'center'}),
+        footer
 ])
