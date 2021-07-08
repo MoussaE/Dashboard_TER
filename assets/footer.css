@@ -1,0 +1,52 @@
+.Footer {
+    height: 150px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -3px 5px black;
+    background-color: rgba(0, 0, 0, 0.712);
+    color: white;
+    margin-bottom: 0;
+    font-size: 10px;
+    text-align: center;
+}
+
+.Footer div h2 {
+    color: rgb(150, 150, 150);
+}
+
+.Footer a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: 0.1s;
+    
+}
+
+.Footer div {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Copyright p img {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+.Contact {
+    border-left: 2px solid rgb(150, 150, 150);
+}
+
+
+
+.Footer a:hover {
+    text-decoration: underline;
+    color: black;
+}

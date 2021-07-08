@@ -50,9 +50,15 @@ div.logo_uvsq img{
     width: 100%;
 }
 
+.actual-content {
+    border-bottom: 2px solid rgba(105, 4, 59, 1);
+}
+
+
 div.logo_github {
     width: 5%;
     height: 100%;
+    background-color: rgba(105, 4, 59, 1);
 }
 
 div.logo_github a{
@@ -72,8 +78,9 @@ div.logo_github a img{
 }
 
 div.logo_github a:hover {
-    background-color: rgba(105, 4, 59, 1);
+    box-shadow: -3px 0 5px rgba(105, 4, 59, 0.7);
     transition: 0.2s;
+    background-color: #FFF;
 }
 
 img {
@@ -128,6 +135,7 @@ nav ul li.header.menu.nav-ul--li a:hover {
     background-color: rgba(105, 4, 59, 1);
     transition: 0.2s;
 }
+
 
 @media screen and (max-width:1025px) {
     nav ul li.header.menu.nav-ul--li a:active {

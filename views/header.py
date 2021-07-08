@@ -120,12 +120,12 @@ header = html.Div(
                                                             html.A(
                                                                 children=[
                                                                     html.Img(
-                                                                        src="/assets/icon/github_purple.svg",
+                                                                        src="/assets/icon/github_white.svg",
                                                                         alt="logo github"
                                                                     )
                                                                 ],
                                                                 id="Github",
-                                                                href="#"
+                                                                href="https://github.com/Khalimouh/ter-piratage"
                                                             )
                                                         ]
                                                     )

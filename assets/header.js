@@ -9,11 +9,21 @@ setTimeout(function() {
     compare = document.getElementById("Compare");
     github = document.getElementById("Github");
 
-
-    if(chemin == "/plot") {
+    if(chemin == "/" || chemin == "") {
+        accueil.classList.add("actual-content");
+    }
+    else if(chemin == "/#") {
+        jupyter.classList.add("actual-content");
+    }
+    else if(chemin == "/compare") {
+        compare.classList.add("actual-content");
+    }
+    // Sur plot donc affiche globe
+    else if(chemin == "/plot") {
         globe = document.getElementById("Globe");
         rgraphique = document.getElementById("remove-graphique");
-        ul.removeChild(rgraphique);
+        rgraphique.classList.add("actual-content");
+        /*ul.removeChild(rgraphique);
 
         globe.addEventListener("mouseover", function(event) {
             console.log(event);
@@ -23,14 +33,16 @@ setTimeout(function() {
         globe.addEventListener("mouseout", function(event) {
             console.log(event);
             globe.children[0].src = "/assets/icon/globe.svg";
-        })
+        })*/
+
 
     }
-
+    // Sur globe donc affiche plote
     else if (chemin == "/map") {
         graphique = document.getElementById("Graphique");
         rglobe = document.getElementById("remove-globe");
-        ul.removeChild(rglobe);
+        rglobe.classList.add("actual-content");
+        /*ul.removeChild(rglobe);
 
         graphique.addEventListener("mouseover", function(event) {
             console.log(event);
@@ -40,9 +52,12 @@ setTimeout(function() {
         graphique.addEventListener("mouseout", function(event) {
             console.log(event);
             graphique.children[0].src = "/assets/icon/chart.svg";
-        }) 
-    }    
-    else {
+        }) */
+
+        
+    }   
+    // Ailleur que sur map ou plot
+    //else {
         graphique = document.getElementById("Graphique");
         globe = document.getElementById("Globe");
 
@@ -65,7 +80,7 @@ setTimeout(function() {
             console.log(event);
             globe.children[0].src = "/assets/icon/globe.svg";
         })
-    }
+    //}
     //console.log(accueil, graphique, jupyter, globe, compare, github); 
 
     // Acceuil ---------------
@@ -79,6 +94,7 @@ setTimeout(function() {
         console.log(event);
         accueil.children[0].src = "/assets/icon/house_purple.svg";
     })
+
 
     // Jupyter-Notebook ----------    
 
@@ -108,11 +124,16 @@ setTimeout(function() {
 
     github.addEventListener("mouseover", function(event) {
         console.log(event);
-        github.children[0].src = "/assets/icon/github_white.svg";
+        github.children[0].src = "/assets/icon/github_purple.svg";
     })
 
     github.addEventListener("mouseout", function(event) {
         console.log(event);
-        github.children[0].src = "/assets/icon/github_purple.svg";
+        github.children[0].src = "/assets/icon/github_white.svg";
     })
-}, 1000)
+
+    current = document.querySelector(".actual-content");
+    console.log(current);
+    current.href = "javascript:void(0)";
+    current.style.cursor = "default";
+}, 1500)
