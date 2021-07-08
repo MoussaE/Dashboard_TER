@@ -11,7 +11,7 @@ from views.header import header
 from dash.dependencies import Input, Output
 from data.fetcher import fetcher 
 from views.affichage import * 
-
+from views.index import index
 
 app = dash.Dash(__name__ ,suppress_callback_exceptions=True,external_stylesheets=[dbc.themes.LUX] )
 
@@ -24,7 +24,7 @@ def display_page(pathname):
     elif pathname == "/compare":
         return html.Div([corps_compare])
     else: 
-        return html.Div(children= "3")
+        return index
 
 
 
