@@ -1,5 +1,6 @@
 { 
-	"world":{
+	"world":
+	{
 	"cyber crimes" : "select c.nicename , c.iso ,  cc.score from c_crime cc , countries c where cc.country_id = c.id;" ,
 	"serveurs" : "select c.nicename , c.iso ,  cc.servsperhab from servers cc , countries c where cc.country_id = c.id and year =   " , 
 	"Alphabetisation 15": "select c.nicename , c.iso ,  cc.literacy_15 from literacy_rate cc , countries c where cc.country_id = c.id and year =  ",
@@ -17,14 +18,15 @@
 	"produit interieure brut par habitant" : "select countries.nicename  , iso  , pibphab  from  piba , countries  where   country_id = countries.id  and year = "
     }, 
 
-    "country":{
+    "country":
+	{
     "Alphabetisation 15": "select countries.nicename  , year , literacy_15  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename= ",
 	"Alphabetisation 25-64" :  "select countries.nicename  , year , literacy_25_64  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =" ,
 	"Alphabetisation 64 et plus": "select countries.nicename  , year , literacy_65  from literacy_rate , countries  where   literacy_rate.country_id = countries.id  and nicename =",
 	"homicides" : "select countries.nicename  , year , count   from homicides , countries  where   country_id = countries.id  and nicename =",
 	"migration" : "select countries.nicename  , year , value   from migration , countries  where   country_id = countries.id  and nicename =",
 	"serveurs" : "select countries.nicename  , year , servsperhab   from servers , countries  where   country_id = countries.id  and nicename =",
-	"score regime politique" : "select countries.nicename  , year , score_regime  from type_political_regime  , countries  where   country_id = countries.id  and nicename =",
+	"Score regime politique" : "select countries.nicename  , year , score_regime  from type_political_regime  , countries  where   country_id = countries.id  and nicename =",
 	"nombre d'importation en materiel techno" : "select countries.nicename  , year , percent  from  ict_imports , countries  where   country_id = countries.id  and nicename =",
 	"nombre d'exportation en materiel techno" : "select countries.nicename  , year , percent   from ict_exports  , countries  where   country_id = countries.id  and nicename =",
 	"utilisateurs internet" : "select countries.nicename  , year , usagescore  from netusers  , countries  where   country_id = countries.id  and nicename =",
@@ -37,21 +39,21 @@
 }
 	 , "rename":
 	 {
-		 "Alphabetisation 15": "literacy_rate",
-		 "Alphabetisation 25-64" :  "literacy_rate",
-		 "Alphabetisation 64 et plus": "literacy_rate",
-		 "homicides" : "homicides",
-		 "migration" : "migration",
-		 "serveurs" : "servers",
-		 "Score regime politique" : "type_political_regime",
+		 "Alphabetisation 15"					   : "literacy_rate",
+		 "Alphabetisation 25-64" 				   :  "literacy_rate",
+		 "Alphabetisation 64 et plus"			   : "literacy_rate",
+		 "homicides" 				 			   : "homicides",
+		 "migration" 							   : "migration",
+		 "serveurs" 							   :  "servers",
+		 "Score regime politique" 				   : "type_political_regime",
 		 "nombre d'importation en materiel techno" : "ict_imports",
 		 "nombre d'exportation en materiel techno" : "ict_exports",
-		 "population par pays" :  "population",
-		 "score de piratage" : "bsa",
-		 "donnees militaire" : "gmi",
-		 "produit interieure brut par habitant" : "piba", 
-		 "utilisateurs internet" : "netusers",
-		 "cyber crimes" : "c_crime"
+		 "population par pays" 					   :  "population",
+		 "score de piratage" 					   : "bsa",
+		 "donnees militaire" 					   : "gmi",
+		 "produit interieure brut par habitant"    : "piba", 
+		 "utilisateurs internet" 				   : "netusers",
+		 "cyber crimes" 						   : "c_crime"
 	 }
 
    }
