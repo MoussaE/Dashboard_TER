@@ -97,6 +97,22 @@ corps_plot= html.Div(
 ])
 
 
+corps_jupyter= html.Div(
+    className="schema_chart",
+    children=[
+        header,
+        html.Div(
+            id="frame_jn",
+            children = [
+                html.Iframe(
+                    src="https://chiottesman.fr/les-differentes-crottes/"
+                )
+            ]
+        ),
+        footer
+    ]
+)
+
 
 corps_compare= html.Div(
     className="schema_chart",
@@ -106,7 +122,6 @@ corps_compare= html.Div(
     html.Div(
         className="schema_chart",
         children=[ 
-
         header,
         dcc.Graph(id='graph_compare', figure=figure_compare,),
         html.Br(children=[]), 

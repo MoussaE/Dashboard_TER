@@ -22,11 +22,9 @@ df = pd.read_sql("select  t.table_name as Table,d.description, c.reltuples as Tu
 
 
 index = html.Div(
-    [
-        html.Br(),
-        html.Br(),
-        html.Br(),
-        html.Br(),
+    className="schema_chart",
+    children=[
+        
         dbc.Row(dbc.Col(header)),
         dbc.Row(dbc.Col(
             dbc.Jumbotron([

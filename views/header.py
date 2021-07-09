@@ -95,7 +95,7 @@ header = html.Div(
                                                                                     )
                                                                                 ],
                                                                                 id="Jupyter-Notebook",
-                                                                                href="#")
+                                                                                href="/jupyter")
                                                                         ]),
                                                                     html.Li(
                                                                         className="header menu nav-ul nav-ul--li",

@@ -25,7 +25,7 @@ footer = html.Footer(
                                         "Notre site utilise des icônes en provenance de ",
                                         html.A (
                                                 "icones8.fr",
-                                                href="www.icones8.fr"
+                                                href="https://www.icones8.fr"
                                         ),
                                         html.Br(),
                                         html.Img(

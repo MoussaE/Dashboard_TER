@@ -12,7 +12,7 @@ setTimeout(function() {
     if(chemin == "/" || chemin == "") {
         accueil.classList.add("actual-content");
     }
-    else if(chemin == "/#") {
+    else if(chemin == "/jupyter") {
         jupyter.classList.add("actual-content");
     }
     else if(chemin == "/compare") {
@@ -136,4 +136,4 @@ setTimeout(function() {
     console.log(current);
     current.href = "javascript:void(0)";
     current.style.cursor = "default";
-}, 1500)
+}, 2000)

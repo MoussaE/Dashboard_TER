@@ -23,6 +23,8 @@ def display_page(pathname):
         return html.Div([corps_plot])
     elif pathname == "/compare":
         return html.Div([corps_compare])
+    elif pathname == "/jupyter":
+        return html.Div([corps_jupyter])
     else: 
         return index
 
