@@ -32,6 +32,7 @@ class  draw:
         if  not world :
             
             requete  = self.query["country"][table_name] + "\'"+ str (country_name) + "\';"
+
             layout = go.Layout(title="", height=600, width=800)
         
             df  = self.recup.get_data (requete)
@@ -56,9 +57,16 @@ class  draw:
         
         requete1  = self.query["country"][table] + "\'"+ str (country_name_2) + "\';"
         df2  = self.recup.get_data (requete1)
+        name_1 = str (table) +"("+ str ( country_name_1) +")"
+        name_2 = str (table) +"("+ str (country_name_2) +")"
+
+        if df.empty:
+            name_1 = "pas de donnees (vide)"
+        if df2.empty: 
+            name_2 = "pas de donnees (vide)"
         
-        fig.add_trace(go.Scatter(x=df2["Year"], y=df2["Value"], mode='markers',name= table +"("+ country_name_1 +")"))
-        fig.add_trace(go.Scatter(x=df["Year"],  y=df["Value"], mode='markers'  ,name= table +"("+ country_name_2 +")"))
+        fig.add_trace(go.Scatter(x=df2["Year"], y=df2["Value"], mode='markers',name= name_2))
+        fig.add_trace(go.Scatter(x=df["Year"],  y=df["Value"] , mode='markers' ,name=name_1))
 
 
         return fig
