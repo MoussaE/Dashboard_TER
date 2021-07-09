@@ -68,7 +68,7 @@ corps_plot= html.Div(
         header,
         dcc.Graph(id='graph_plot', figure=figure_plot,),
         dcc.Dropdown( 
-                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories ],
+                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
@@ -130,7 +130,7 @@ corps_compare= html.Div(
                             multi=False,
                             value= dessinateur.countries["nicename"][0],
                             placeholder= "Nom pays",
-                            id = "drop_countries_compare",
+                            id = "drop_data_compare_1",
                             className="menu-deroulant"
             
                       ),
@@ -138,10 +138,11 @@ corps_compare= html.Div(
             html.Br(children=[]),
 
          dcc.Dropdown( 
-                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories_pays ],
+                            options=[ {'label': value ["nicename"]  ,'value': value["nicename"] } for  key , value  in dessinateur.countries.iterrows() ],
                             multi=False,
-                            value= nom_table ,
-                            id = "drop_tables_compare",
+                            value= dessinateur.countries["nicename"][0],
+                            placeholder= "Nom pays",
+                            id = "drop_data_compare_2",
                             className="menu-deroulant"
             
                       ),

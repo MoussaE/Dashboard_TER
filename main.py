@@ -30,24 +30,29 @@ def display_page(pathname):
 
 
 
-@app.callback( Output('graph_map', 'figure'),Input('drop_tables_map', 'value') , Input('year-slider', 'value')  )
+@app.callback( Output('graph_map', 'figure'),Input('drop_tables_map', 'value') , Input('year-slider', 'value'))
 def update_figure(selected_table , selected_year):
     fig = dessinateur.draw_func ( selected_table ,  True  , year =selected_year) 
     fig.update_layout(transition_duration=500)
     return fig
 
 
-@app.callback( Output('graph_plot', 'figure'), Input('drop_tables', 'value') , Input('drop_countries', 'value')  )
+@app.callback( Output('graph_plot', 'figure')
+,Input('drop_tables', 'value')
+,Input('drop_countries', 'value'))
 def update_figure(selected_table , selected_country):
-
     fig = dessinateur.draw_func (selected_table ,  False   , selected_country ) 
     fig.update_layout(transition_duration=500)
     return fig
 
 
-@app.callback( Output('graph_compare', 'figure'),Input('drop_countries_compare', 'value') ,Input('drop_tables_compare', 'value'), Input('drop_tables2_compare', 'value')   )
-def update_figure(country , tb1 , tb2):
-    fig = dessinateur.draw_compare (country , tb1 , tb2)
+@app.callback( Output('graph_compare', 'figure')
+,Input('drop_data_compare_1','value') 
+,Input('drop_data_compare_2','value')
+,Input('drop_tables2_compare','value')
+)
+def update_figure(country_1 ,country_2 , table):
+    fig = dessinateur.draw_compare (country_1 ,country_2 , table)
     fig.update_layout(transition_duration=500)
     return fig
 
