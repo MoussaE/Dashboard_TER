@@ -1,0 +1,15 @@
+table.cell-table {
+    color: black;
+    border: 4px solid rgba(105, 4, 59, 0.5);
+    border-radius: 10px;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th.dash-header {
+    background-color: rgba(105, 4, 59, 0.3);
+    color: white;
+    font-weight: bold;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td.dash-cell {
+    border: 1px solid grey;
+}
