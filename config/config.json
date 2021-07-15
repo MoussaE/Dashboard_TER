@@ -1,9 +1,9 @@
 { 
     "param":{
-                "user": "postgres",
-                "host": "localhost", 
-                "mdp":"postgres",
-                "port":"5432", 
-                "db":"piratage"
-   			 }
+        "user": "piratage",
+        "host": "192.168.33.55", 
+        "mdp":"f0f89cee55",
+        "port":"5432", 
+        "db":"piratage"
+   	}
 }
