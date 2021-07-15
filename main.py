@@ -14,6 +14,8 @@ from views.affichage import *
 from views.index import index
 
 app = dash.Dash(__name__ ,suppress_callback_exceptions=True,external_stylesheets=[dbc.themes.LUX] )
+server = app.server
+app.layout = html.Div([dcc.Location(id='url', refresh=True), html.Div(id='page-content', children=[])])
 
 @app.callback(Output('page-content', 'children'),[Input('url', 'pathname')]  )
 def display_page(pathname):
@@ -56,8 +58,6 @@ def update_figure(country_1 ,country_2 , table):
     fig.update_layout(transition_duration=500)
     return fig
 
-
 if __name__ == '__main__':   
-    app.layout = html.Div([dcc.Location(id='url', refresh=True), html.Div(id='page-content', children=[])])
-    app.run_server(debug=True)
+    app.run_server()
   

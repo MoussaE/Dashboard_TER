@@ -105,7 +105,7 @@ corps_jupyter= html.Div(
             id="frame_jn",
             children = [
                 html.Iframe(
-                    src="https://www.whatismyip.com/fr/"
+                    src="http://192.168.33.56:8888"
                 )
             ]
         ),

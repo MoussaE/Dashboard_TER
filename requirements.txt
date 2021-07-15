@@ -1,7 +1,8 @@
 pandas
 dash
 plotly
-psycopg2 
+psycopg2-binary
 dash_core_components
 dash_html_components
 dash-bootstrap-components
+waitress
