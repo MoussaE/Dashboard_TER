@@ -65,7 +65,9 @@ jobs:
           passphrase: ${{secrets.PASSPHRASE }}
           script_stop: true
           script: |
-            touch test.txt
+            echo "Updating containner on remote server"
             docker login 
             docker pull uvsq21606335/dashboard-piratage
-            
+            ./DockerScripts/stopContainer.sh 8050
+            yes | docker container prune 
+            docker run -dp 192.168.33.56:8050:8050 uvsq21606335/dashboard-piratage:latest
