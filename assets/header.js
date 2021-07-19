@@ -26,12 +26,12 @@ setTimeout(function() {
         /*ul.removeChild(rgraphique);
 
         globe.addEventListener("mouseover", function(event) {
-            console.log(event);
+            //console.log(event);
             globe.children[0].src = "/assets/icon/globe_white.svg";
         })
     
         globe.addEventListener("mouseout", function(event) {
-            console.log(event);
+            //console.log(event);
             globe.children[0].src = "/assets/icon/globe.svg";
         })*/
 
@@ -45,12 +45,12 @@ setTimeout(function() {
         /*ul.removeChild(rglobe);
 
         graphique.addEventListener("mouseover", function(event) {
-            console.log(event);
+            //console.log(event);
             graphique.children[0].src = "/assets/icon/chart_white.svg";
         })
     
         graphique.addEventListener("mouseout", function(event) {
-            console.log(event);
+            //console.log(event);
             graphique.children[0].src = "/assets/icon/chart.svg";
         }) */
 
@@ -62,36 +62,36 @@ setTimeout(function() {
         globe = document.getElementById("Globe");
 
         graphique.addEventListener("mouseover", function(event) {
-            console.log(event);
+            //console.log(event);
             graphique.children[0].src = "/assets/icon/chart_white.svg";
         })
     
         graphique.addEventListener("mouseout", function(event) {
-            console.log(event);
+            //console.log(event);
             graphique.children[0].src = "/assets/icon/chart.svg";
         }) 
 
         globe.addEventListener("mouseover", function(event) {
-            console.log(event);
+            ////console.log(event);
             globe.children[0].src = "/assets/icon/globe_white.svg";
         })
     
         globe.addEventListener("mouseout", function(event) {
-            console.log(event);
+            ////console.log(event);
             globe.children[0].src = "/assets/icon/globe.svg";
         })
     //}
-    //console.log(accueil, graphique, jupyter, globe, compare, github); 
+    ////console.log(accueil, graphique, jupyter, globe, compare, github); 
 
     // Acceuil ---------------
 
     accueil.addEventListener("mouseover", function(event) {
-        console.log(event);
+        //console.log(event);
         accueil.children[0].src = "/assets/icon/house_white.svg";
     })
 
     accueil.addEventListener("mouseout", function(event) {
-        console.log(event);
+        //console.log(event);
         accueil.children[0].src = "/assets/icon/house_purple.svg";
     })
 
@@ -99,41 +99,41 @@ setTimeout(function() {
     // Jupyter-Notebook ----------    
 
     jupyter.addEventListener("mouseover", function(event) {
-        console.log(event);
+        //console.log(event);
         jupyter.children[0].src = "/assets/icon/python_fill_white.svg";
     })
 
     jupyter.addEventListener("mouseout", function(event) {
-        console.log(event);
+        //console.log(event);
         jupyter.children[0].src = "/assets/icon/python_fill_purple.svg";
     })
 
     // Compare -----------
 
     compare.addEventListener("mouseover", function(event) {
-        console.log(event);
+        //console.log(event);
         compare.children[0].src = "/assets/icon/compare_white.svg";
     })
 
     compare.addEventListener("mouseout", function(event) {
-        console.log(event);
+        //console.log(event);
         compare.children[0].src = "/assets/icon/compare.svg";
     })
 
     // GITHUB -----------
 
     github.addEventListener("mouseover", function(event) {
-        console.log(event);
+        //console.log(event);
         github.children[0].src = "/assets/icon/github_purple.svg";
     })
 
     github.addEventListener("mouseout", function(event) {
-        console.log(event);
+        //console.log(event);
         github.children[0].src = "/assets/icon/github_white.svg";
     })
 
     current = document.querySelector(".actual-content");
-    console.log(current);
+    //console.log(current);
     current.href = "javascript:void(0)";
     current.style.cursor = "default";
 }, 2000)
