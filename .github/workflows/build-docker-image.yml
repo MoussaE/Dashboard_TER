@@ -55,13 +55,14 @@ jobs:
           config_file: ./.github/vpn/config.ovpn
           username: ${{ secrets.OVPN_USERNAME }}
           password: ${{ secrets.OVPN_PASSWORD }}
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
-        env:
-          NAME: "Root"
+      - name: stop script if command error
+        uses: appleboy/ssh-action@master
         with:
-          hosts: 'root@webapp.adam.uvsq.fr:22'
-          privateKey: ${{ secrets.KEY }}
-          debug: true
-          command: |
-            touch test
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script_stop: true
+          script: |
+            mkdir abc/def
+            ls -al
