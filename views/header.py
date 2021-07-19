@@ -95,7 +95,8 @@ header = html.Div(
                                                                                     )
                                                                                 ],
                                                                                 id="Jupyter-Notebook",
-                                                                                href="http://192.168.33.56:8888/?token=12d1a9ff71ddd4e9db81369e4fd042f8098e0d8438280502
+                                                                                href="http://192.168.33.56:8888/?token=12d1a9ff71ddd4e9db81369e4fd042f8098e0d8438280502"
+                                                                            )
                                                                         ]),
                                                                     html.Li(
                                                                         className="header menu nav-ul nav-ul--li",
