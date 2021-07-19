@@ -60,9 +60,8 @@ jobs:
         env:
           NAME: "Root"
         with:
-          hosts: 'root@webapp.adam.uvsq.fr'
+          hosts: 'root@webapp.adam.uvsq.fr:22'
           privateKey: ${{ secrets.KEY }}
-          debug: false
+          debug: true
           command: |
-            ls -lah
-            echo "I am $NAME"
+            touch test
