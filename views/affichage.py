@@ -59,7 +59,6 @@ corps_map = html.Div(
 ])
 
 #pays 
-
 corps_plot= html.Div(
     className="schema_chart",
     children=[
@@ -125,8 +124,10 @@ corps_compare= html.Div(
         header,
         dcc.Graph(id='graph_compare', figure=figure_compare,),
         html.Br(children=[]), 
-        dcc.Dropdown( 
+        dcc.Dropdown(     
+
                             options=[ {'label': value ["nicename"]  ,'value': value["nicename"] } for  key , value  in dessinateur.countries.iterrows() ],
+
                             multi=False,
                             value= dessinateur.countries["nicename"][0],
                             placeholder= "Nom pays",

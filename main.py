@@ -39,16 +39,30 @@ def update_figure(selected_table , selected_year):
     return fig
 
 
-@app.callback( Output('graph_plot', 'figure')
-,Input('drop_tables', 'value')
-,Input('drop_countries', 'value'))
-def update_figure(selected_table , selected_country):
+
+
+
+@app.callback( Output('graph_plot', 'figure') , Output('drop_countries', 'options')
+,Input('drop_tables', 'value'),
+Input('drop_countries', 'value'))
+def update_figure(selected_table,selected_country ):
+    options=[]
     fig = dessinateur.draw_func (selected_table ,  False   , selected_country ) 
     fig.update_layout(transition_duration=500)
-    return fig
+
+    
+    for  valeur  in dessinateur.countriesNotIn["nicename"]:
+        for  value  in dessinateur.countries["nicename"]:
+            if str (value) == str (valeur):
+                options.append({'label': value   ,'value': value , 'disabled': True})
+            else:
+                options.append({'label': value  ,'value': value})
+
+    return fig , options
 
 
-@app.callback( Output('graph_compare', 'figure')
+
+@app.callback( Output('graph_compare', 'figure'), Output('drop_data_compare_1', 'options'), Output('drop_data_compare_2', 'options')
 ,Input('drop_data_compare_1','value') 
 ,Input('drop_data_compare_2','value')
 ,Input('drop_tables2_compare','value')
@@ -56,7 +70,23 @@ def update_figure(selected_table , selected_country):
 def update_figure(country_1 ,country_2 , table):
     fig = dessinateur.draw_compare (country_1 ,country_2 , table)
     fig.update_layout(transition_duration=500)
-    return fig
+
+    options=[]
+    for  valeur  in dessinateur.countriesNotIn["nicename"]:
+        for  value  in dessinateur.countries["nicename"]:
+            if str (value) == str (valeur):
+                options.append({'label': value   ,'value': value , 'disabled': True})
+            else:
+                options.append({'label': value  ,'value': value})
+              
+
+
+    return fig , options , options
+
+
+
+
+
 
 if __name__ == '__main__':   
     app.run_server()
