@@ -2,16 +2,19 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-import os 
+import os
 import json
 import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
+import imageio
+from datetime import date
 from views.header import header 
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 from data.fetcher import fetcher 
 from views.affichage import * 
 from views.index import index
+
 
 app = dash.Dash(__name__ ,suppress_callback_exceptions=True,external_stylesheets=[dbc.themes.LUX] )
 server = app.server
@@ -29,6 +32,30 @@ def display_page(pathname):
         return html.Div([corps_jupyter])
     else: 
         return index
+
+
+@app.callback(Output('download-gif', 'data'), Input('gif_downloader', 'n_clicks'), State('drop_tables_map', 'value')) 
+def download_gif(n_clicks, selected_table):
+    current = os.getcwd()
+    table_name = dessinateur.query["rename"][str(selected_table)] + str(date.today())
+    if n_clicks:
+        filenames = []
+        images= []
+        gifname = current + "/bin/gif/" + table_name +".gif"
+        for year in range(2000, 2020):
+            #print(year)
+            fig = dessinateur.draw_func(selected_table, True, year=year)
+            filename= current + "/bin/tmp/figure" + str(year) +".png"
+            fig.write_image(filename)
+            images.append(imageio.imread(filename))
+            filenames.append(filename)
+        imageio.mimsave(gifname, images,fps=4000)
+        for filename in filenames:
+            os.remove(filename)
+        return dcc.send_file(gifname)
+
+    
+
 
 
 
@@ -59,5 +86,6 @@ def update_figure(country_1 ,country_2 , table):
     return fig
 
 if __name__ == '__main__':   
-    app.run_server()
+    app.run_server(debug=False)
+    
   
