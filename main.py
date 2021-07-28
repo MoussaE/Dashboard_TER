@@ -48,15 +48,20 @@ Input('drop_countries', 'value'))
 def update_figure(selected_table,selected_country ):
     options=[]
     fig = dessinateur.draw_func (selected_table ,  False   , selected_country ) 
-    fig.update_layout(transition_duration=500)
+    requete  = "select distinct (nicename) from countries , "+ dessinateur.query["rename"][selected_table] + " where countries.id = " +dessinateur.query["rename"][selected_table]+".country_id ;"
+  
+    dessinateur.recup.cur.execute (requete)
+    df = dessinateur.recup.cur.fetchall()
+    df  = pd.DataFrame(df ,columns=["CountryName"])
 
+    for  valeur  in  dessinateur.countries["nicename"]:
+        if not df["CountryName"].str.contains(str(valeur)).any():
+        
+            options.append({'label': valeur   ,'value': valeur , 'disabled': True})
+        else:
+            options.append({'label': valeur  ,'value': valeur})
     
-    for  valeur  in dessinateur.countriesNotIn["nicename"]:
-        for  value  in dessinateur.countries["nicename"]:
-            if str (value) == str (valeur):
-                options.append({'label': value   ,'value': value , 'disabled': True})
-            else:
-                options.append({'label': value  ,'value': value})
+    fig.update_layout(transition_duration=1000)
 
     return fig , options
 
@@ -69,17 +74,25 @@ def update_figure(selected_table,selected_country ):
 )
 def update_figure(country_1 ,country_2 , table):
     fig = dessinateur.draw_compare (country_1 ,country_2 , table)
-    fig.update_layout(transition_duration=500)
+ 
 
     options=[]
-    for  valeur  in dessinateur.countriesNotIn["nicename"]:
-        for  value  in dessinateur.countries["nicename"]:
-            if str (value) == str (valeur):
-                options.append({'label': value   ,'value': value , 'disabled': True})
-            else:
-                options.append({'label': value  ,'value': value})
+    requete  = "select distinct (nicename) from countries , "+ dessinateur.query["rename"][table] + " where countries.id = " +dessinateur.query["rename"][table]+".country_id ;"
+  
+    dessinateur.recup.cur.execute (requete)
+    df = dessinateur.recup.cur.fetchall()
+    df  = pd.DataFrame(df ,columns=["CountryName"])
+
+    for  valeur  in  dessinateur.countries["nicename"]:
+        if not df["CountryName"].str.contains(str(valeur)).any():
+        
+            options.append({'label': valeur   ,'value': valeur , 'disabled': True})
+        else:
+            options.append({'label': valeur  ,'value': valeur})
               
 
+    
+    fig.update_layout(transition_duration=1000)
 
     return fig , options , options
 

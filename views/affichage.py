@@ -79,7 +79,7 @@ corps_plot= html.Div(
          html.Br(children=[]), 
          html.Br(children=[]), 
          dcc.Dropdown( 
-                            options=[ {'label': value ["nicename"]  ,'value': value["nicename"] } for  key , value  in dessinateur.countries.iterrows() ],
+                            options=[],
                             multi=False,
                             value= dessinateur.countries["nicename"][0],
                             placeholder= "Nom pays",
