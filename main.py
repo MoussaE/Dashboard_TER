@@ -54,8 +54,15 @@ def download_gif(n_clicks, selected_table):
             os.remove(filename)
         return dcc.send_file(gifname)
 
-    
-
+@app.callback( Output('year-slider', 'value'), Input('incr-plus', 'n_clicks'), Input('incr-moins', 'n_clicks'), State('year-slider', 'value'))
+def increment_year(plus, moins, year):
+    year_t = year
+    changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+    if 'incr-plus' in changed_id and year != 2019:
+        year_t+= 1
+    elif 'incr-moins' in changed_id and year != 1990:
+        year_t-= 1
+    return year_t
 
 
 
