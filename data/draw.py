@@ -19,8 +19,8 @@ class  draw:
         
         self.recup = fetcher ()
         
-      
-        
+
+
     def draw_func (self , table_name , world = False, country_name = "" , year = 1990):
         
         self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries ,  "+self.query["rename"][table_name] +  " where countries.id =  " + 
@@ -28,6 +28,7 @@ class  draw:
         
      
         self.years = pd.read_sql_query("select  distinct (year) from " +self.query["rename"][table_name]  +" ;" , self.recup.cnt.conn )
+        
       
         if  not world :
             

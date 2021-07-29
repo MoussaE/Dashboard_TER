@@ -31,7 +31,7 @@ corps_map = html.Div(
     header,
     dcc.Graph(id='graph_map',figure=figure_map,),
     dcc.Dropdown( 
-                            options=[ {'label': value   ,'value': value } for  value  in dessinateur.categories ],
+                            options=[ {'label': value, 'value': value } for  value  in dessinateur.categories ],
                             multi=False,
                             value= nom_table ,
                             placeholder= "Données",
@@ -44,18 +44,62 @@ corps_map = html.Div(
     html.Div(
         [ 
             html.Br(children=[]), 
-            dcc.Dropdown(
-                options=[{'label': value, 'value': value}
-                         for value in marks],
-                multi=False,
-                value=2000,
-                placeholder="Données",
-                id="year-slider",
-                className="menu-deroulant"
-
+#            dcc.Slider(
+#                id="year-slider",
+#                min=2000,
+#                max=2019,
+#                step=1,
+#                value=2010,
+#                dots=True,
+#                marks=marks,
+#               className="menu-deroulant"
+#           )
+            html.Div (
+                children = [
+                    dcc.Dropdown(
+                    options=[{'label': value, 'value': value}
+                            for value in marks],
+                        multi=False,
+                        value=2000,
+                        placeholder="Données",
+                        id="year-slider",
+                        className="menu-deroulant"
+                    ),
+                    html.Div(
+                        [
+                            html.Button(
+                                '+',
+                                className="increment",
+                                id="incr-plus"
+                            ),
+                            html.Button(
+                                '-',
+                                className="increment",
+                                id="incr-moins"
+                            )
+                        ],
+                        id="up-down"
+                    )
+                ],
+                id="near-to-near"
             )
-        ],style={'text-align': 'center'}),
-        footer
+            
+        ],style={'text-align': 'center'}
+    ),
+    html.Div(
+        children=[
+        html.Button (
+            'Télécharger .gif',
+            #'Créer une Animation',
+            id="gif_downloader",
+            disabled=False
+        ),
+        dcc.Download(id='download-gif')
+        ],
+        className="menu-deroulant menu-btn",
+
+    ),
+    footer
 ])
 
 #pays 
