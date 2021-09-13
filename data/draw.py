@@ -23,10 +23,7 @@ class  draw:
 
     def draw_func (self , table_name , world = False, country_name = "" , year = 1990):
         
-        self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries ,  "+self.query["rename"][table_name] +  " where countries.id =  " + 
-        self.query["rename"][table_name]+".country_id ;", self.recup.cnt.conn )
-        
-     
+        self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries order by  nicename ; ", self.recup.cnt.conn )       
         self.years = pd.read_sql_query("select  distinct (year) from " +self.query["rename"][table_name]  +" ;" , self.recup.cnt.conn )
         
       
@@ -52,7 +49,7 @@ class  draw:
     def draw_compare(self , country_name_1 , country_name_2 , table ):
         fig = go.Figure()
      
-        self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries", self.recup.cnt.conn )
+        self.countries = pd.read_sql_query("select distinct ( nicename ) , iso from countries order by  nicename ; ", self.recup.cnt.conn )
         requete  = self.query["country"][table] + "\'"+ str (country_name_1) + "\';"
         df  = self.recup.get_data (requete)
         
