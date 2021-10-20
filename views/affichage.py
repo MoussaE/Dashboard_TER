@@ -3,9 +3,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 import os 
 import json
-from dash_html_components.Br import Br
-from dash_html_components.Header import Header
-from numpy.lib.function_base import median
 import plotly.graph_objects as go
 import pandas as pd 
 import plotly.express as px
