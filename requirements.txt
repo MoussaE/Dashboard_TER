@@ -4,6 +4,6 @@ plotly
 psycopg2-binary
 dash_core_components
 dash_html_components
-dash-bootstrap-components
+dash-bootstrap-components==0.13.1
 waitress
 imageio
